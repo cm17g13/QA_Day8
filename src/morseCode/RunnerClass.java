@@ -12,20 +12,25 @@ public class RunnerClass {
 
 		populateEnglish();
 		populateMorse();
-		System.out.println("Would you like to convert from \"Morse\" to a \"String\" or from a \"String\" to \"Morse\"");
-		System.out.println("Please put what you would like to convert from: ");
-		String input = scanner.nextLine().toLowerCase().trim();
-		if(input.equals("morse")) {
-			System.out.println("Please paste in your morse code");
-			String morse = scanner.nextLine().trim();
-			morseToString(morseToEnglish, morse);
-		} else if(input.equals("string")) {
-			System.out.println("Please paste in your text");
-			String english = scanner.nextLine().toLowerCase().trim();
-			stringToMorse(english);
-		} else {
-			System.out.println("Please put either \"Morse\" or \"String\"");
-		}
+		boolean stop = false;
+		do {
+			System.out.println("Would you like to convert from \"Morse\" to a \"String\" or from a \"String\" to \"Morse\"");
+			System.out.println("Please put what you would like to convert from: ");
+			String input = scanner.nextLine().toLowerCase().trim();
+			if(input.equals("morse")) {
+				System.out.println("Please paste in your morse code");
+				stop = true;
+				String morse = scanner.nextLine().trim();
+				morseToString(morseToEnglish, morse);
+			} else if(input.equals("string")) {
+				System.out.println("Please paste in your text");
+				stop = true;
+				String english = scanner.nextLine().toLowerCase().trim();
+				stringToMorse(english);
+			} else {
+				System.out.println("Please put either \"Morse\" or \"String\"");
+			}
+		}while(!stop);
 	}
 	
 	public static void morseToString(HashMap<String,Character> morseToEnglish, String morse) {
