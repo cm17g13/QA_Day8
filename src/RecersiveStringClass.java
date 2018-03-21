@@ -35,10 +35,4 @@ public class RecersiveStringClass {
 			return i * fact(i-1);
 		}
 	}
-	//hello
-	//l
-	//lo
-	//does l == l
-	//return (a + "-" +(a + (b + "-" + (b))))
-	//String hel-lo
 }

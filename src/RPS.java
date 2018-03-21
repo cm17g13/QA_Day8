@@ -17,8 +17,7 @@ public class RPS {
 		int myWins = 0;
 		int ties = 0;
 		ArrayList<String> picked = new ArrayList<String>();
-		do {
-			
+		do {	
 			System.out.println("Enter a number between 1 and " + numberOfSigns + ", or stop: ");
 			
 			String s = reader.nextLine().trim().toLowerCase();
@@ -38,7 +37,6 @@ public class RPS {
 				String myOutcome;
 				String theirOutcome;
 				
-				
 				for(int i = 0; i < numberOfSigns; i++) {
 					for(int j = 0; j < numberOfSigns; j++) {
 						if(myNumber == i && theirNumber == j) {
@@ -53,19 +51,7 @@ public class RPS {
 								System.out.println("You win!");
 								myWins++;
 							}
-							//code from online, doesnt work
-//							if (theirNumber == myNumber) {
-//								System.out.println("Draw, boooooo");
-//								ties++;
-//							} else if ((theirNumber - myNumber) % 5 < 3) {
-//								System.out.println("You lose :'(");
-//								compWins++;
-//						    } else {
-//						    	System.out.println("You win!");
-//								myWins++;
-//						    }
-							
-							
+					
 							gamesPlayed++;
 							myOutcome = outcome(i);
 							theirOutcome = outcome(j);
@@ -83,8 +69,6 @@ public class RPS {
 				
 				//false: 	1,2  	1,5 	2,3		2,4 	3,1 
 				//true: 	1,3 (4,3)	2,1		3,2
-				
-				
 			} else {
 				System.err.println("Invalid input, please retype");
 				continue;
@@ -103,13 +87,10 @@ public class RPS {
 			int signsPlayed = Collections.frequency(picked, outcome(i));
 			if(signsPlayed > initialValue) {
 				sign = outcome(i);
-				initialValue = signsPlayed;
-				
+				initialValue = signsPlayed;		
 			}
 		}
 		System.out.println("The most played sign was " + sign + ", it was played " + initialValue + " times, It appeared in " + initialValue*100/gamesPlayed + "% of games");
-		
-		
 		reader.close();
 	}
 
@@ -127,7 +108,6 @@ public class RPS {
 			return "Spock";
 		default:
 			return "you're an idiot";
-
 		}
 	}
 
