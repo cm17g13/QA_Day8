@@ -5,6 +5,7 @@ public class RecersiveStringClass {
 		System.out.println(recurciveMethod("hello"));
 		System.out.println(recurciveMethod("aabb"));
 		System.out.println(recurciveMethod("zzzz"));
+		System.out.println(fact(5));
 	}
 	
 	public static String recurciveMethod(String Word) {
@@ -23,6 +24,21 @@ public class RecersiveStringClass {
 			//eg. return currentLetter + "-" + (currentLetter + "-" + (currentLetter + "-" +(currentLetter))));
 		} else {
 			return currentLetter + recurciveMethod(restOfWord);
+			//eg. return currentLetter + (currentLetter + (currentLetter +(currentLetter))));
 		}
 	}
+	
+	public static int fact(int i) {
+		if(i == 1) {
+			return 1;
+		} else {
+			return i * fact(i-1);
+		}
+	}
+	//hello
+	//l
+	//lo
+	//does l == l
+	//return (a + "-" +(a + (b + "-" + (b))))
+	//String hel-lo
 }
