@@ -52,14 +52,11 @@ public class RunnerClass {
 			for(char letter : letters) {
 				System.out.print(englishToMorse.get(letter) + " ");
 			}
+			//checks to see if its the last word in the sentence, if so don't print the word separator
 			if(i != englishSplit.length) {
 				System.out.print(" / ");
 			}
 		}
-	}
-	
-	public static int add(int a, int b) {
-		return a + b;
 	}
 	
 	public static void populateEnglish() {
