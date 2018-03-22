@@ -2,7 +2,6 @@
 public class Sprials {
 
 	private static String[][] grid;
-	@SuppressWarnings("unused")
 	private static int padding;
 	
 	public static void main(String[] args) {
