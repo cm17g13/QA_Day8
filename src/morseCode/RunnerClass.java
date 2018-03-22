@@ -8,13 +8,11 @@ public class RunnerClass {
 	static HashMap<String, Character> morseToEnglish;
 	
 	public static void main(String[] args) {
-		//String morse = ".... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.—";
-
 		populateEnglish();
 		populateMorse();
 		boolean stop = false;
 		do {
-			System.out.println("Would you like to convert from \"Morse\" to a \"String\" or from a \"String\" to \"Morse\"");
+			System.out.println("Would you like to convert from \"Morse\" to a \"Eenglish\" or from a \"English\" to \"Morse\"");
 			System.out.println("Please put what you would like to convert from: ");
 			String input = scanner.nextLine().toLowerCase().trim();
 			if(input.equals("morse")) {
@@ -22,13 +20,13 @@ public class RunnerClass {
 				stop = true;
 				String morse = scanner.nextLine().trim();
 				morseToString(morseToEnglish, morse);
-			} else if(input.equals("string")) {
+			} else if(input.equals("english")) {
 				System.out.println("Please paste in your text");
 				stop = true;
 				String english = scanner.nextLine().toLowerCase().trim();
 				stringToMorse(english);
 			} else {
-				System.out.println("Please put either \"Morse\" or \"String\"");
+				System.out.println("Please put either \"Morse\" or \"English\"");
 			}
 		}while(!stop);
 	}
