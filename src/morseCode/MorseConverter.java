@@ -1,7 +1,7 @@
 package morseCode;
 import java.util.*;
 
-public class RunnerClass {
+public class MorseConverter {
 
 	static Scanner scanner = new Scanner(System.in);
 	static HashMap<Character, String> englishToMorse;
@@ -12,19 +12,19 @@ public class RunnerClass {
 		populateMorse();
 		boolean stop = false;
 		do {
-			System.out.println("Would you like to convert from \"Morse\" to a \"English\" or from a \"English\" to \"Morse\"");
+			System.out.println("Would you like to convert from \"Morse\" to a \"English\" or from a \"English\" to \"Morse\", or would you like to \"Stop\"");
 			System.out.println("Please put what you would like to convert from: ");
 			String input = scanner.nextLine().toLowerCase().trim();
 			if(input.equals("morse")) {
 				System.out.println("Please paste in your morse code");
-				stop = true;
 				String morse = scanner.nextLine().trim();
 				morseToString(morseToEnglish, morse);
 			} else if(input.equals("english")) {
 				System.out.println("Please paste in your text");
-				stop = true;
 				String english = scanner.nextLine().toLowerCase().trim();
 				stringToMorse(english);
+			} else if(input.equals("stop")) {
+				stop = true;
 			} else {
 				System.out.println("Please put either \"Morse\" or \"English\"");
 			}
@@ -65,42 +65,44 @@ public class RunnerClass {
 	public static void populateEnglish() {
 		
 		englishToMorse = new HashMap<Character, String>();
-		englishToMorse.put('a',    ".-");
-        englishToMorse.put('b',  "-...");
-        englishToMorse.put('c',  "-.-.");
-        englishToMorse.put('d',   "-..");
-        englishToMorse.put('e',     ".");
-        englishToMorse.put('f',  "..-.");
-        englishToMorse.put('g',   "--.");
-        englishToMorse.put('h',  "....");
-        englishToMorse.put('i',    "..");
-        englishToMorse.put('j',  ".---");
-        englishToMorse.put('k',   "-.-");
-        englishToMorse.put('l',  ".-..");
-        englishToMorse.put('m',    "--");
-        englishToMorse.put('n',    "-.");
-        englishToMorse.put('o',   "---");
-        englishToMorse.put('p',  ".--.");
-        englishToMorse.put('q',  "--.-");
-        englishToMorse.put('r',   ".-.");
-        englishToMorse.put('s',   "...");
-        englishToMorse.put('t',     "-");
-        englishToMorse.put('u',   "..-");
-        englishToMorse.put('v',  "...-");
-        englishToMorse.put('w',   ".--");
-        englishToMorse.put('x',  "-..-");
-        englishToMorse.put('y',  "-.--");
-        englishToMorse.put('z',  "--..");
-        englishToMorse.put('1', ".----");
-        englishToMorse.put('2', "..---");
-        englishToMorse.put('3', "...--");
-        englishToMorse.put('4', "....-");
-        englishToMorse.put('5', ".....");
-        englishToMorse.put('6', "-....");
-        englishToMorse.put('7', "--...");
-        englishToMorse.put('8', "---..");
-        englishToMorse.put('9', "----.");
-        englishToMorse.put('0', "-----");
+		englishToMorse.put('a',     ".-");
+        englishToMorse.put('b',   "-...");
+        englishToMorse.put('c',   "-.-.");
+        englishToMorse.put('d',    "-..");
+        englishToMorse.put('e',      ".");
+        englishToMorse.put('f',   "..-.");
+        englishToMorse.put('g',    "--.");
+        englishToMorse.put('h',   "....");
+        englishToMorse.put('i',     "..");
+        englishToMorse.put('j',   ".---");
+        englishToMorse.put('k',    "-.-");
+        englishToMorse.put('l',   ".-..");
+        englishToMorse.put('m',     "--");
+        englishToMorse.put('n',     "-.");
+        englishToMorse.put('o',    "---");
+        englishToMorse.put('p',   ".--.");
+        englishToMorse.put('q',   "--.-");
+        englishToMorse.put('r',    ".-.");
+        englishToMorse.put('s',    "...");
+        englishToMorse.put('t',      "-");
+        englishToMorse.put('u',    "..-");
+        englishToMorse.put('v',   "...-");
+        englishToMorse.put('w',    ".--");
+        englishToMorse.put('x',   "-..-");
+        englishToMorse.put('y',   "-.--");
+        englishToMorse.put('z',   "--..");
+        englishToMorse.put('1',  ".----");
+        englishToMorse.put('2',  "..---");
+        englishToMorse.put('3',  "...--");
+        englishToMorse.put('4',  "....-");
+        englishToMorse.put('5',  ".....");
+        englishToMorse.put('6',  "-....");
+        englishToMorse.put('7',  "--...");
+        englishToMorse.put('8',  "---..");
+        englishToMorse.put('9',  "----.");
+        englishToMorse.put('0',  "-----");
+        englishToMorse.put('.', ".-.-.-");
+        englishToMorse.put(',', "--..--");
 	}
 	
 	public static void populateMorse() {
