@@ -28,6 +28,7 @@ public class MorseConverter {
 			} else {
 				System.out.println("Please put either \"Morse\" or \"English\"");
 			}
+			System.out.println();
 		}while(!stop);
 	}
 	
